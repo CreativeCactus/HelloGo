@@ -7,8 +7,8 @@ import (
   "os/exec"
   "log"
   "sort"
-  "reflect"
   "strconv"
+  "strings"
   
   /*
   "io/ioutil"
@@ -73,8 +73,12 @@ func Command(Cmd string)string{
   Cmd  = string( Cmd[1: ] ) 
   print("C:%v\tCmd:%v",c,Cmd)
   if c=="_" {
-    Cmd=string(Cmd);
-    res, err  := exec.Command(Cmd).Output()
+    Fields := strings.Fields(string(Cmd))
+    if len(Fields)==0 { return "" }
+    Args := " "
+    if len(Fields)>1 {    Args = strings.Join(Fields[1:]," ")  }
+    
+    res, err  := exec.Command(Fields[0],Args).Output()
 	  if err != nil {		log.Fatal(err)	}
 	  return string(res);
   }
