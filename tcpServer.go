@@ -38,6 +38,9 @@ func main() {
 
 func handleComms(conn  net.Conn) string{
   fmt.Printf("User connected from %v\n",conn.RemoteAddr());
+  /*
+    Look for browser user agent and send html with term callback
+  */
   conn.Write([]byte("Hi. Do you have ID?\n"))
   ID, _ := bufio.NewReader(conn).ReadString('\n')
   fmt.Printf("%v assumed ID:%v\n", conn.RemoteAddr(), ID)

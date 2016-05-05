@@ -1,8 +1,12 @@
 package main 
-import "testing" 
+import (
+  "testing" 
+  "net"
+)
     
-func TestTimeConsuming(t *testing.T) {
-    if testing.Short() {
-        t.Skip("skipping test in short mode.")
-    }
+func TestNothing(t *testing.T) {
+    if testing.Short() {t.Skip("skipping test in short mode.")}//-test.short
+}
+func TestEcho(t *testing.T) {
+    
 }

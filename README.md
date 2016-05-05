@@ -12,5 +12,6 @@ Of note to self
 	T is subtype of interface{}
 		though not so for []interface{}
 	array[:] is *array
-	
+	*testing.T <3
+	godoc <3
 
