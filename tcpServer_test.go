@@ -6,6 +6,8 @@ import (
   "bufio"
 )
     
+    //Add 'example' to test _echo HI
+    
 func TestNothing(t *testing.T) {
     if testing.Short() {t.Skip("skipping test in short mode.")}//-test.short
 }

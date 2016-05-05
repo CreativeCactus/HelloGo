@@ -78,6 +78,8 @@ func Command(Cmd string)string{
     Args := " "
     if len(Fields)>1 {    Args = strings.Join(Fields[1:]," ")  }
     
+    //Why does _ls cause exit status 2?
+    
     res, err  := exec.Command(Fields[0],Args).Output()
 	  if err != nil {		log.Fatal(err)	}
 	  return string(res);
